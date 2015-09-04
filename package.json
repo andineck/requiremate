@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "keeps your installed dependencies in sync with the require'd modules in your code.",
   "main": "index.js",
-  "bin": {
-    "requireomat": "index.js"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

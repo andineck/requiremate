@@ -1,0 +1,199 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose node symlink /usr/local/bin/node
+5 verbose publish [ '.' ]
+6 silly cache add args [ '.', null ]
+7 verbose cache add spec .
+8 silly cache add parsed spec { raw: '.',
+8 silly cache add   scope: null,
+8 silly cache add   name: null,
+8 silly cache add   rawSpec: '.',
+8 silly cache add   spec: '/Users/andineck/Development/github/requireomat',
+8 silly cache add   type: 'directory' }
+9 verbose addLocalDirectory /Users/andineck/.npm/requireomat/1.0.0/package.tgz not in flight; packing
+10 verbose tar pack [ '/Users/andineck/.npm/requireomat/1.0.0/package.tgz',
+10 verbose tar pack   '/Users/andineck/Development/github/requireomat' ]
+11 verbose tarball /Users/andineck/.npm/requireomat/1.0.0/package.tgz
+12 verbose folder /Users/andineck/Development/github/requireomat
+13 info prepublish requireomat@1.0.0
+14 verbose addLocalTarball adding from inside cache /Users/andineck/.npm/requireomat/1.0.0/package.tgz
+15 silly cache afterAdd requireomat@1.0.0
+16 verbose afterAdd /Users/andineck/.npm/requireomat/1.0.0/package/package.json not in flight; writing
+17 verbose afterAdd /Users/andineck/.npm/requireomat/1.0.0/package/package.json written
+18 silly publish { name: 'requireomat',
+18 silly publish   version: '1.0.0',
+18 silly publish   description: 'keeps your installed dependencies in sync with the require\'d modules in your code.',
+18 silly publish   main: 'index.js',
+18 silly publish   bin: { requireomat: 'index.js' },
+18 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'https://github.com/andineck/requireomat.git' },
+18 silly publish   keywords:
+18 silly publish    [ 'require',
+18 silly publish      'install',
+18 silly publish      'dependencies',
+18 silly publish      'dependency',
+18 silly publish      'package.json' ],
+18 silly publish   author: { name: 'Andi Neck' },
+18 silly publish   license: 'MIT',
+18 silly publish   bugs: { url: 'https://github.com/andineck/requireomat/issues' },
+18 silly publish   homepage: 'https://github.com/andineck/requireomat',
+18 silly publish   dependencies:
+18 silly publish    { chalk: '^1.1.1',
+18 silly publish      'check-dependencies': '^0.9.5',
+18 silly publish      defaults: '^1.0.2',
+18 silly publish      depcheck: '^0.4.7',
+18 silly publish      depmissing: '^0.1.1',
+18 silly publish      'run-series': '^1.1.2',
+18 silly publish      shelljs: '^0.5.3',
+18 silly publish      sliced: '^1.0.1',
+18 silly publish      subarg: '^1.0.0' },
+18 silly publish   readme: '# requireomat\n\n[![NPM](https://nodei.co/npm/requireomat.png)](https://nodei.co/npm/requireomat/)\n\nkeeps your installed dependencies in sync with the require\'d modules in your code.\n\nTired of these messages?\n\n\n```bash\n__Error: Cannot find module \'wtf@&!#\'__\n```\n\n\n> __requireomat__ to the rescue!\n> hassle free installing of your required modules.\n\n\n\n# install\ninstall it globally, you won\'t regret it. it is really useful for every module you develop.\n\n```bash\nnpm install -g requireomat\n```\n\n# usage\n\n 1. make sure you have got a package.json\n 2. write your code (you don\'t have to do any `npm install`\n 3. before you run your code, run: `requireomat` in the root directory of your project.\n 4. done.\n\n# options\n\nyou can run `requireomat` from the __command line__ as well as from your __node.js__ code.\n\navailable options:\n\n - verbose (alias: n)\n - dryrun\n - withoutDev\n - ignoreDirs\n - ignoreMatches\n - ignorePackages\n - saveDev\n - ignoreVersion\n - dir\n\n\n## command line\ncommand line options are handled with [subarg](https://npmjs.org/subarg).\n\n```bash\n\n# dryrun without action, only report\nrequireomat -n\n\n# fix installs in the current directory\nrequireomat\n\n# run with verbose logs\nrequireomat --verbose\n\n# check installs in a neighbour project (dir option)\nrequireomat ../my-friends-project --dryrun\n```\n\n## node.js\n\n```javascript\nvar requireomat = require(\'requireomat\');\n\nvar options = {\n  "dryrun": true,\n  "dir": "/my/computer/my-project",\n  "withoutDev": false,\n  "ignoreDirs": [\n    "sandbox",\n    "dist",\n    "bower_components"\n  ],\n  "ignore": [\n    "sandbox",\n    "dist",\n    "bower_components"\n  ],\n  "ignoreMatches": [],\n  "ignorePackages": []\n}\n\nrequireomat(options);\n\n```\n\n# license\n\nMIT\n\n# sponsored by\n\n[intesso](http://intesso.com)\n\n\n\n',
+18 silly publish   readmeFilename: 'readme.md',
+18 silly publish   gitHead: 'b23f1ecadb6fd3faeefb4e930260a59cf99d4df9',
+18 silly publish   _id: 'requireomat@1.0.0',
+18 silly publish   _shasum: '2d8433bd443c8be45de61a5b1aadab6fc048da8d',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name requireomat
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/requireomat
+24 verbose publish registryBase https://registry.npmjs.org/
+25 silly publish uploading /Users/andineck/.npm/requireomat/1.0.0/package.tgz
+26 verbose request uri https://registry.npmjs.org/requireomat
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 23:05:52
+29 verbose request id 94f5738caee6a974
+30 http request PUT https://registry.npmjs.org/requireomat
+31 http 503 https://registry.npmjs.org/requireomat
+32 verbose bad json <?xml version="1.0" encoding="utf-8"?>
+32 verbose bad json <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+32 verbose bad json  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+32 verbose bad json <html>
+32 verbose bad json   <head>
+32 verbose bad json     <title>503 All backends failed or unhealthy</title>
+32 verbose bad json   </head>
+32 verbose bad json   <body>
+32 verbose bad json     <h1>Error 503 All backends failed or unhealthy</h1>
+32 verbose bad json     <p>All backends failed or unhealthy</p>
+32 verbose bad json     <h3>Guru Mediation:</h3>
+32 verbose bad json     <p>Details: cache-lhr6329-LHR 1441400755 3084526072</p>
+32 verbose bad json     <hr>
+32 verbose bad json     <p>Varnish cache server</p>
+32 verbose bad json   </body>
+32 verbose bad json </html>
+33 error registry error parsing json
+34 info retry will retry, error on last attempt: SyntaxError: Unexpected token <
+34 info retry
+34 info retry <?xml version="1.0" encoding="utf-8"?>
+34 info retry <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+34 info retry  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+34 info retry <html>
+34 info retry   <head>
+34 info retry     <title>503 All backends failed or unhealthy</title>
+34 info retry   </head>
+34 info retry   <body>
+34 info retry     <h1>Error 503 All backends failed or unhealthy</h1>
+34 info retry     <p>All backends failed or unhealthy</p>
+34 info retry     <h3>Guru Mediation:</h3>
+34 info retry     <p>Details: cache-lhr6329-LHR 1441400755 3084526072</p>
+34 info retry     <hr>
+34 info retry     <p>Varnish cache server</p>
+34 info retry   </body>
+34 info retry </html>
+35 info attempt registry request try #2 at 23:06:05
+36 http request PUT https://registry.npmjs.org/requireomat
+37 info retry will retry, error on last attempt: Error: socket hang up
+38 info attempt registry request try #3 at 23:08:06
+39 http request PUT https://registry.npmjs.org/requireomat
+40 http 503 https://registry.npmjs.org/requireomat
+41 verbose bad json <?xml version="1.0" encoding="utf-8"?>
+41 verbose bad json <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+41 verbose bad json  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+41 verbose bad json <html>
+41 verbose bad json   <head>
+41 verbose bad json     <title>503 All backends failed or unhealthy</title>
+41 verbose bad json   </head>
+41 verbose bad json   <body>
+41 verbose bad json     <h1>Error 503 All backends failed or unhealthy</h1>
+41 verbose bad json     <p>All backends failed or unhealthy</p>
+41 verbose bad json     <h3>Guru Mediation:</h3>
+41 verbose bad json     <p>Details: cache-lcy1127-LCY 1441400889 1113113108</p>
+41 verbose bad json     <hr>
+41 verbose bad json     <p>Varnish cache server</p>
+41 verbose bad json   </body>
+41 verbose bad json </html>
+42 error registry error parsing json
+43 verbose headers { server: 'Varnish',
+43 verbose headers   'retry-after': '0',
+43 verbose headers   'content-type': 'text/html; charset=utf-8',
+43 verbose headers   'content-length': '490',
+43 verbose headers   'accept-ranges': 'bytes',
+43 verbose headers   date: 'Fri, 04 Sep 2015 21:08:09 GMT',
+43 verbose headers   via: '1.1 varnish',
+43 verbose headers   connection: 'close',
+43 verbose headers   'x-served-by': 'cache-lcy1127-LCY',
+43 verbose headers   'x-cache': 'MISS',
+43 verbose headers   'x-cache-hits': '0',
+43 verbose headers   'x-timer': 'S1441400887.096593,VS0,VE2002' }
+44 verbose request invalidating /Users/andineck/.npm/registry.npmjs.org/requireomat on PUT
+45 error publish Failed PUT 503
+46 verbose stack SyntaxError: Unexpected token <
+46 verbose stack
+46 verbose stack <?xml version="1.0" encoding="utf-8"?>
+46 verbose stack <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+46 verbose stack  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+46 verbose stack <html>
+46 verbose stack   <head>
+46 verbose stack     <title>503 All backends failed or unhealthy</title>
+46 verbose stack   </head>
+46 verbose stack   <body>
+46 verbose stack     <h1>Error 503 All backends failed or unhealthy</h1>
+46 verbose stack     <p>All backends failed or unhealthy</p>
+46 verbose stack     <h3>Guru Mediation:</h3>
+46 verbose stack     <p>Details: cache-lcy1127-LCY 1441400889 1113113108</p>
+46 verbose stack     <hr>
+46 verbose stack     <p>Varnish cache server</p>
+46 verbose stack   </body>
+46 verbose stack </html>
+46 verbose stack
+46 verbose stack     at Object.parse (native)
+46 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:197:23)
+46 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+46 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:354:22)
+46 verbose stack     at Request.emit (events.js:110:17)
+46 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1207:14)
+46 verbose stack     at Request.emit (events.js:129:20)
+46 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1153:12)
+46 verbose stack     at IncomingMessage.emit (events.js:129:20)
+46 verbose stack     at _stream_readable.js:908:16
+47 verbose cwd /Users/andineck/Development/github/requireomat
+48 error Darwin 14.5.0
+49 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+50 error node v0.12.7
+51 error npm  v2.11.3
+52 error Unexpected token <
+52 error
+52 error <?xml version="1.0" encoding="utf-8"?>
+52 error <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+52 error  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+52 error <html>
+52 error   <head>
+52 error     <title>503 All backends failed or unhealthy</title>
+52 error   </head>
+52 error   <body>
+52 error     <h1>Error 503 All backends failed or unhealthy</h1>
+52 error     <p>All backends failed or unhealthy</p>
+52 error     <h3>Guru Mediation:</h3>
+52 error     <p>Details: cache-lcy1127-LCY 1441400889 1113113108</p>
+52 error     <hr>
+52 error     <p>Varnish cache server</p>
+52 error   </body>
+52 error </html>
+53 error If you need help, you may report this error at:
+53 error     <https://github.com/npm/npm/issues>
+54 verbose exit [ 1, true ]
