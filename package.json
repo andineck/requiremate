@@ -1,0 +1,26 @@
+{
+  "name": "requireomat",
+  "version": "1.0.0",
+  "description": "keeps your installed dependencies in sync with the require'd modules in your code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andineck/requireomat.git"
+  },
+  "keywords": [
+    "require",
+    "install",
+    "dependencies",
+    "dependency",
+    "package.json"
+  ],
+  "author": "Andi Neck",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andineck/requireomat/issues"
+  },
+  "homepage": "https://github.com/andineck/requireomat"
+}
