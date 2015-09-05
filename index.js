@@ -208,5 +208,8 @@ module.exports = function requireomat(o, callback) {
  */
 if (require.main === module) {
   var args = require('subarg')(process.argv.slice(2));
-  module.exports(args);
+  module.exports(args, function(err, result){
+    var code = (err) ? -1 : 0;
+    process.exit(code);
+  });
 }

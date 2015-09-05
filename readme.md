@@ -1,6 +1,5 @@
 # requireomat
 
-[![NPM](https://nodei.co/npm/requireomat.png)](https://nodei.co/npm/requireomat/)
 
 keeps your installed dependencies in sync with the require'd modules in your code.
 
