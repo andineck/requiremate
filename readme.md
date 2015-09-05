@@ -31,6 +31,23 @@ npm install -g requireomat
  3. before you run your code, run: `requireomat` in the root directory of your project.
  4. done.
 
+
+# how does it work
+
+`requireomat` follows this workfow (taken from code)
+
+ ```javascript
+
+   series([
+     unused,   // 1. remove unused dependencies from file system and package.json
+     install,  // 2. install the defined dependencies
+     missing,  // 3. install missing dependencies and save to package.json
+     version,  // 4. update package.json with installed version
+     done      // 5. all done, cu next time
+   ]);
+
+ ```
+
 # options
 
 you can run `requireomat` from the __command line__ as well as from your __node.js__ code.
