@@ -1,6 +1,6 @@
 {
   "name": "requireomat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "keeps your installed dependencies in sync with the require'd modules in your code.",
   "main": "index.js",
   "bin": {
