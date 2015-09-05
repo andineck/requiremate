@@ -28,6 +28,9 @@ module.exports = function requireomat(o, callback) {
   var ignoreDirs = [ // Pathnames to ignore
     "sandbox",
     "dist",
+    "public",
+    "out",
+    "temp",
     "bower_components"
   ];
 
