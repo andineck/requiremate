@@ -17,7 +17,7 @@ var depmissing = require('depmissing');
  *
  * @param o options: verbose, dryrun, withoutDev, ignoreDirs, ignoreMatches, ignorePackages, saveDev, ignoreVersion, dir
  */
-module.exports = function requireomat(o) {
+module.exports = function requireomat(o, callback) {
 
   /**
    * get options right
@@ -55,18 +55,20 @@ module.exports = function requireomat(o) {
    */
 
   series([
-    unused,   // 1. remove unused dependencies from file system and package.json
-    install,  // 2. install the defined dependencies
-    missing,  // 3. install missing dependencies
-    version,  // 4. update package.json with installed version
-    done      // 5. say good bye
-  ]);
+      unused,   // 1. remove unused dependencies from file system and package.json
+      install,  // 2. install the defined dependencies
+      missing,  // 3. install missing dependencies
+      version,  // 4. update package.json with installed version
+      done      // 5. say good bye
+    ], function end(err, result) {
+      if (callback) callback(err, result);
+    }
+  );
 
   /**
    * define tasks.
    *
-   * @param options
-   * @param cb
+   * @param cb callback
    */
 
   function unused(cb) {
