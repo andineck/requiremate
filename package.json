@@ -7,7 +7,7 @@
     "requireomat": "index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -36,5 +36,8 @@
     "shelljs": "^0.5.3",
     "sliced": "^1.0.1",
     "subarg": "^1.0.0"
+  },
+  "devDependencies": {
+    "tape": "^4.2.0"
   }
 }
