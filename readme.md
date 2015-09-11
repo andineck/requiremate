@@ -38,8 +38,8 @@ npm install -g requireomat
  ```javascript
 
    series([
+      remove,     // 0. optional option remove: remove the whole node_modules folder (just to make sure)
       unused,     // 1. remove unused dependencies from file system and package.json
-      uninstall,  // only with option uninstall: delete the whole node_modules folder, just to make sure, no dead bodies are lying around
       install,    // 2. install the defined dependencies
       missing,    // 3. install missing dependencies
       version,    // 4. update package.json with installed version
@@ -56,7 +56,7 @@ available options:
 
  - verbose (alias: n)
  - dryrun
- - uninstall
+ - remove
  - withoutDev
  - ignoreDirs
  - ignoreMatches

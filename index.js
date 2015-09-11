@@ -15,7 +15,7 @@ var depmissing = require('depmissing');
 
 /**
  *
- * @param o options: verbose, dryrun, uninstall, withoutDev, ignoreDirs, ignoreMatches, ignorePackages, saveDev, ignoreVersion, dir
+ * @param o options: verbose, dryrun, remove, withoutDev, ignoreDirs, ignoreMatches, ignorePackages, saveDev, ignoreVersion, dir
  */
 module.exports = function requireomat(o, callback) {
 
@@ -37,7 +37,7 @@ module.exports = function requireomat(o, callback) {
   if (options._ && options._.length > 0) options.dir = options._[0];
   options = defaults(options, {
     "dir": ".",
-    "withoutDev": false, // Check against devDependencies too
+    "withoutDev": undefined, // Check against devDependencies too
     "ignoreDirs": ignoreDirs,
     "ignore": ignoreDirs,
     "ignoreMatches": [],  // Ignore dependencies that match these minimatch patterns
@@ -51,15 +51,15 @@ module.exports = function requireomat(o, callback) {
 
   shell.cd(dir);
   var pwd = shell.pwd();
-  log('working directory', pwd);
+  log('requireomat working directory', pwd);
 
   /**
    * execute tasks
    */
 
   series([
+      remove,     // 0. optional option remove: remove the whole node_modules folder (just to make sure)
       unused,     // 1. remove unused dependencies from file system and package.json
-      uninstall,  // only with option uninstall: delete the whole node_modules folder, just to make sure, no dead bodies are lying around
       install,    // 2. install the defined dependencies
       missing,    // 3. install missing dependencies
       version,    // 4. update package.json with installed version
@@ -101,11 +101,11 @@ module.exports = function requireomat(o, callback) {
     });
   }
 
-  function uninstall(cb) {
+  function remove(cb) {
 
-    if (options.uninstall) {
+    if (options.remove) {
 
-      info('ATTENTION: remove existing node_modules folder');
+      info('ATTENTION: removing existing node_modules folder');
 
       exec('rm -rf node_modules');
 
