@@ -107,7 +107,16 @@ module.exports = function requireomat(o, callback) {
 
       info('ATTENTION: removing existing node_modules folder');
 
-      exec('rm -rf node_modules');
+      var result = undefined;
+      try {
+        result = exec('rm -rf node_modules');
+      } catch(e){
+        if (e.code === 'ENOENT') {
+          log('no node_modules folder to remove');
+        } else {
+          error('could not remove node_modules folder', result, e);
+        }
+      }
 
     }
 
@@ -158,15 +167,24 @@ module.exports = function requireomat(o, callback) {
 
     if (options.ignoreVersion) return cb();
 
-    var output = dependenciesCheck.sync({
-      packageDir: dir,
-      onlySpecified: !options.dryrun,
-      install: !options.dryrun,
-      verbose: options.verbose || options.dryrun
-    });
+    var result = undefined;
+    try {
+      result = dependenciesCheck.sync({
+        packageDir: dir,
+        onlySpecified: !options.dryrun,
+        install: !options.dryrun,
+        verbose: options.verbose || options.dryrun
+      });
+    } catch(e){
+      if (e.code === 'ENOENT') {
+        debug('no modules installed');
+      } else {
+        error('could not compare installed/defined dependency versions', result, e);
+      }
+    }
 
-    if (output.error.length > 0) {
-      log('version errors', output.error.join(' | '));
+    if (result && result.error && result.error.length > 0) {
+      log('version errors', result.error.join(' | '));
     }
 
     cb();
