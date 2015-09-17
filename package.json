@@ -1,17 +1,17 @@
 {
-  "name": "requireomat",
+  "name": "requiremate",
   "version": "1.1.1",
-  "description": "keeps your installed dependencies in sync with the require'd modules in your code.",
+  "description": "keeps your installed dependencies in sync with the required modules in your code.",
   "main": "index.js",
   "bin": {
-    "requireomat": "index.js"
+    "requiremate": "index.js"
   },
   "scripts": {
     "test": "node test.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/andineck/requireomat.git"
+    "url": "https://github.com/andineck/requiremate.git"
   },
   "keywords": [
     "require",
@@ -23,9 +23,9 @@
   "author": "Andi Neck",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andineck/requireomat/issues"
+    "url": "https://github.com/andineck/requiremate/issues"
   },
-  "homepage": "https://github.com/andineck/requireomat",
+  "homepage": "https://github.com/andineck/requiremate",
   "dependencies": {
     "chalk": "^1.1.1",
     "check-dependencies": "^0.9.5",

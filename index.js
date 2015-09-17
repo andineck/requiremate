@@ -17,7 +17,7 @@ var depmissing = require('depmissing');
  *
  * @param o options: verbose, dryrun, remove, withoutDev, ignoreDirs, ignoreMatches, ignorePackages, saveDev, ignoreVersion, dir
  */
-module.exports = function requireomat(o, callback) {
+module.exports = function requiremate(o, callback) {
 
   /**
    * get options right
@@ -51,7 +51,7 @@ module.exports = function requireomat(o, callback) {
 
   shell.cd(dir);
   var pwd = shell.pwd();
-  log('requireomat working directory', pwd);
+  log('requiremate working directory', pwd);
 
   /**
    * execute tasks

@@ -1,9 +1,9 @@
 var test = require('tape');
-var requireomat = require('./index');
+var requiremate = require('./index');
 
 test('should dryrun and then call callback', function(t){
   t.plan(2);
-  requireomat({
+  requiremate({
     dryrun: true
   }, function(err, result){
     t.false(err);
