@@ -3,16 +3,33 @@
 
 keeps your installed dependencies in sync with the require'd modules in your code.
 
-Tired of these messages?
+**Tired of these messages?**
 
 
 ```bash
-__Error: Cannot find module 'wtf@&!#'__
+Error: Cannot find module 'wtf@&!#'
 ```
 
 
 > __requiremate__ to the rescue!
 > hassle free installing of your required modules.
+
+
+> Not sure if you have got too many dependencies in your package.json?
+
+> Want to know if the installed version are the defined ones?
+
+> Want a simple command to keep your installed and defined dependencies in sync with the required modules in your code?
+
+to check, run:
+```bash
+requiremate -n
+```
+
+to fix it, run:
+```bash
+requiremate
+```
 
 
 
@@ -42,7 +59,7 @@ requiremate -n
 # fix installs in the current directory
 requiremate
 
-# remove all node_modules fix installs
+# remove all node_modules and fix installs
 requiremate --remove
 
 # run with verbose logs
@@ -50,6 +67,33 @@ requiremate --verbose
 
 # check installs in a neighbour project (dir option)
 requiremate ../my-friends-project --dryrun
+```
+
+
+## example report
+
+```bash
+
+requiremate -n
+
+requiremate working directory /Users/andineck/Development/github/requiremate
+start searching for unused dependencies
+start installing defined dependencies
+start searching for missing dependencies
+start checking version
+chalk: installed: 1.1.1, expected: ^1.1.1
+check-dependencies: installed: 0.9.5, expected: ^0.9.5
+defaults: installed: 1.0.2, expected: ^1.0.2
+depcheck: installed: 0.4.7, expected: ^0.4.7
+depmissing: installed: 0.1.2, expected: ^0.1.1
+run-series: installed: 1.1.2, expected: ^1.1.2
+shelljs: installed: 0.5.3, expected: ^0.5.3
+sliced: installed: 1.0.1, expected: ^1.0.1
+subarg: installed: 1.0.0, expected: ^1.0.0
+tape: installed: 4.2.0, expected: ^4.2.0
+these are your dependencies chalk check-dependencies defaults depcheck depmissing run-series shelljs sliced subarg tape
+all done!
+
 ```
 
 ## node.js usage
@@ -117,6 +161,12 @@ available options:
 # license
 
 MIT
+
+
+# author
+
+Andi Neck | [@andineck](https://twitter.com/andineck) | andi.neck@intesso.com
+
 
 # sponsored by
 
